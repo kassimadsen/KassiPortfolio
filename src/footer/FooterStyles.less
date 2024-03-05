@@ -1,0 +1,21 @@
+@import "../commonview/styles/Variables.less";
+
+#FooterComponent {
+  background-color: @darkest-gray;
+  color: @white;
+
+  min-height: @footer-height;
+
+  justify-content: center;
+  align-items: center;
+
+  a {
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+    &:active {
+      color: darken(@white, 10%);
+    }
+  }
+}

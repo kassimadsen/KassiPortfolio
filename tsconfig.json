@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "strict": true,
+    "outDir": "./public/js",
+    "lib": ["ES2020", "DOM"],
+    "jsx": "react",
+    "esModuleInterop": true,
+    "target": "ESNext"
+  },
+  "include": [
+    "src/main/**/*.ts",
+    "src/main/**/*.tsx",
+    "src/header/HeaderComponent.tsx",
+    "src/about/AboutComponent.tsx",
+    "src/contact/ContactComponent.tsx",
+    "src/footer/FooterComponent.tsx",
+    "src/landing/LandingComponent.tsx",
+    "src/skills/SkillsComponent.tsx",
+    "src/projects/ProjectsComponent.tsx",
+    "src/timeline/TimelineComponent.tsx"
+  ]
+}

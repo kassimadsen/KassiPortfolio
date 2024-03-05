@@ -1,0 +1,146 @@
+@import "../commonview/styles/Mixins.less";
+@import "../commonview/styles/Variables.less";
+
+#LandingComponent {
+  #background-image-div {
+    width: 100%;
+    height: 100%;
+
+    position: fixed;
+    z-index: @background-image-z;
+
+    .fade-in-on-load();
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  position: relative;
+  background-color: black;
+  clip: rect(top, right, bottom, left);
+
+  max-height: 100vh;
+  height: 162vw;
+
+  @media screen and (min-width: calc(@bp-small + 1px)) {
+    background-attachment: fixed;
+    height: 100vh;
+    max-height: 1080px;
+  }
+
+  & > * {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+
+  .landing-image-div {
+    bottom: 50%;
+
+    @size: 250px;
+    height: @size;
+    width: @size;
+    box-shadow: @shadow, @shadow;
+    -webkit-box-shadow: @shadow, @shadow;
+    -moz-box-shadow: @shadow, @shadow;
+    background-color: @black;
+
+    border: 8px solid @white;
+    border-radius: 100vw;
+
+    overflow: hidden;
+
+    img {
+      opacity: 0.9;
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  .landing-image-text {
+    bottom: 28%;
+
+    color: @bright-white;
+    text-shadow: @shadow, @shadow, @shadow;
+    -webkit-text-shadow: @shadow, @shadow, @shadow;
+    -moz-text-shadow: @shadow, @shadow, @shadow;
+    text-align: center;
+
+    .name {
+      font-size: 84px;
+      font-weight: 400;
+    }
+
+    .about {
+      font-size: 30px;
+      font-weight: 400;
+    }
+
+    @solid: rgba(@black, 0.6);
+    @transparent: rgba(@black, 0);
+
+    padding: 10px 0px;
+    background-image: linear-gradient(90deg, @transparent 20%, @solid 30%, @solid 70%, @transparent 80%);
+  }
+
+  .enter-portfolio-button {
+    box-shadow: @light-shadow;
+    -webkit-box-shadow: @light-shadow;
+    -moz-box-shadow: @light-shadow;
+    bottom: 10%;
+
+    background-color: @bright-white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+
+    font-size: 18px;
+    font-weight: 500;
+
+    &:hover {
+      background-color: darken(@white, 10%);
+    }
+
+    transition: all 0.07s;
+  }
+
+  @media screen and (max-width: @bp-wide) {
+    .landing-image-div {
+      @size: 180px;
+      height: @size;
+      width: @size;
+    }
+    .landing-image-text {
+      .name {
+        font-size: 60px;
+      }
+      .about {
+        font-size: 20px;
+      }
+    }
+  }
+  @media screen and (max-width: @bp-mid) {
+    .landing-image-div {
+      @size: 160px;
+      height: @size;
+      width: @size;
+    }
+    .landing-image-text {
+      .name {
+        font-size: 40px;
+      }
+      .about {
+        font-size: 15px;
+      }
+    }
+    .enter-portfolio-button {
+      padding: 10px 17px;
+      font-size: 14px;
+    }
+  }
+}
